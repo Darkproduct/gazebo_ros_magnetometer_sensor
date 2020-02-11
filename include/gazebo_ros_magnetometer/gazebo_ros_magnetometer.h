@@ -6,9 +6,6 @@
 
 #include <gazebo/sensors/MagnetometerSensor.hh>
 
-#include <ignition/math/Pose3.hh>
-#include <ignition/math/Vector3.hh>
-
 #include <ros/ros.h>
 #include <sensor_msgs/MagneticField.h>
 
@@ -39,7 +36,6 @@ private:
   event::ConnectionPtr connection;
   sensors::MagnetometerSensor* sensor;
   sdf::ElementPtr sdf;
-  ignition::math::Vector3d magnetic_field_world;
 
   std::string robot_namespace;
   std::string topic_name;
