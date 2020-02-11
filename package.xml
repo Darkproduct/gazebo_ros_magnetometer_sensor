@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>gazebo_ros_magnetometer</name>
+  <name>gazebo_ros_magnetometer_sensor</name>
   <version>0.1.0</version>
   <description>A megnetometer plugin for gazebo to bridge magnetometer sensor to ROS.</description>
 

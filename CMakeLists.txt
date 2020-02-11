@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(gazebo_ros_magnetometer)
+project(gazebo_ros_magnetometer_sensor)
 
 ## Compile as C++17
 include(CheckCXXCompilerFlag)
@@ -58,8 +58,8 @@ catkin_package(
 ## Build ##
 ###########
 
-add_library(gazebo_ros_magnetometer src/gazebo_ros_magnetometer.cpp)
-target_link_libraries(gazebo_ros_magnetometer ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
+add_library(gazebo_ros_magnetometer_sensor src/gazebo_ros_magnetometer_sensor.cpp)
+target_link_libraries(gazebo_ros_magnetometer_sensor ${GAZEBO_LIBRARIES} ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -75,7 +75,7 @@ install(DIRECTORY include/${PROJECT_NAME}/
 )
 
 install(TARGETS
-  gazebo_ros_magnetometer
+  gazebo_ros_magnetometer_sensor
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
