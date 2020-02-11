@@ -8,7 +8,6 @@ namespace gazebo
 GZ_REGISTER_SENSOR_PLUGIN(GazeboRosMagneticSensor)
 
 GazeboRosMagneticSensor::GazeboRosMagneticSensor() : SensorPlugin(), sensor(nullptr), nh(nullptr) {
-  ROS_INFO_STREAM(__FUNCTION__ << "Test");
 }
 
 GazeboRosMagneticSensor::~GazeboRosMagneticSensor()
@@ -28,8 +27,6 @@ GazeboRosMagneticSensor::~GazeboRosMagneticSensor()
 
 void GazeboRosMagneticSensor::Load(sensors::SensorPtr sensor_, sdf::ElementPtr sdf_)
 {
-  ROS_INFO_STREAM(__FUNCTION__ << "Test");
-
   sdf    = sdf_;
   sensor = dynamic_cast<gazebo::sensors::MagnetometerSensor*>(sensor_.get());
 
@@ -60,15 +57,11 @@ void GazeboRosMagneticSensor::Load(sensors::SensorPtr sensor_, sdf::ElementPtr s
   connection = event::Events::ConnectWorldUpdateBegin(boost::bind(&GazeboRosMagneticSensor::UpdateChild, this, _1));
 
   last_time = sensor->LastUpdateTime();
-
-  ROS_INFO_STREAM(__FUNCTION__ << "Test 2");
 }
 
 void GazeboRosMagneticSensor::UpdateChild([[maybe_unused]] const gazebo::common::UpdateInfo& msg)
 {
   common::Time current_time = sensor->LastUpdateTime();
-
-  ROS_INFO_STREAM(__FUNCTION__ << "Test");
 
   if (update_rate > 0 && (current_time - last_time).Double() < 1.0 / update_rate)  // update rate check
     return;

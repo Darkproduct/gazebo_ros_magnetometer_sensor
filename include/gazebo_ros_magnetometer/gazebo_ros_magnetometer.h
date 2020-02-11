@@ -23,7 +23,6 @@ public:
 
 protected:
   virtual void Load(sensors::SensorPtr sensor_, sdf::ElementPtr sdf_);
-  virtual void Reset();
 
 protected:
   virtual void UpdateChild(const gazebo::common::UpdateInfo &/*_info*/);
